@@ -1,0 +1,5 @@
+/characters/page/1
+/characters/page/2
+/characters/page/3
+/characters/page/4
+/characters/page/5
