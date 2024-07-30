@@ -1,0 +1,31 @@
+<h1>Personajes</h1>
+
+<section class="grid grid-cols-5 gap-5 mt-5">
+  @for (character of characters(); track character.id) {
+  <dragonball-character-card
+    [character]="character"
+  ></dragonball-character-card>
+  }
+</section>
+
+<!-- Paginación -->
+<section class="flex justify-between mt-10">
+  <button
+    [disabled]="currentPage() === 1"
+    (click)="loadPageByPage(currentPage() - 1)"
+  >
+    Anteriores
+  </button>
+
+  <span class="font-bold text-3xl"
+    >{{ currentPage() }}
+    <small class="text-sm font-thin">de {{ pageInfo().totalPages }}</small>
+  </span>
+
+  <button
+    [disabled]="currentPage() >= this.pageInfo().totalPages"
+    (click)="loadPageByPage(currentPage() + 1)"
+  >
+    Siguientes
+  </button>
+</section>
